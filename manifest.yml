@@ -1,0 +1,23 @@
+modules:
+  jiraServiceManagement:queuePage:
+    - key: issue-data-hello-world-queue-page
+      resource: main
+      resolver:
+        function: resolver
+      render: native
+      title: Issue-Data
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: src/frontend/index.jsx
+app:
+  runtime:
+    name: nodejs22.x
+    memoryMB: 256
+    architecture: arm64
+  id: ari:cloud:ecosystem::app/b78a28c2-66e0-4cf9-8ad6-4fa812bea379
+permissions:
+  scopes:
+    - read:jira-work
