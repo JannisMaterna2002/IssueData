@@ -4,7 +4,7 @@ import { invoke } from '@forge/bridge';
 
 const App = () => {
   const [description, setDescription] = useState('Loading...');
-  const issueKey = 'XELA-1'; // ⛔️ Für echten Kontext dynamisch machen!
+  const issueKey = 'XELA-1'; //BITTE dynamisch machen!
 
   useEffect(() => {
     invoke('getIssueDescription', { issueKey }).then(setDescription);
