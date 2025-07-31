@@ -1,0 +1,22 @@
+modules:
+  jira:projectPage:
+    - key: my-first-jira-quest-hello-world-project-page
+      resource: main
+      resolver:
+        function: resolver
+      render: native
+      title: My first jira quest
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: src/frontend/index.jsx
+app:
+  runtime:
+    name: nodejs22.x
+  id: ari:cloud:ecosystem::app/b8d67b55-fad2-4453-b2d3-821a9833ec09
+permissions:
+  scopes:
+    - read:jira-user
+    - read:jira-work
